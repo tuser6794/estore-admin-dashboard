@@ -1,0 +1,31 @@
+<div class="container-fluid py-3">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white border-0">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column align-items-start">
+                <h4>Shipment</h4>
+                <div class="d-flex flex-wrap">
+                  <button type="button" class="btn btn-sm me-1" *ngFor="let status of shipmentStatus; index as idx" [ngClass]="{
+                    'btn-dark': shipmentStatusIdx === status.value,
+                    'btn-outline-dark': shipmentStatusIdx !== status.value
+                  }">
+                    {{ status.name }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <img src="./../../../assets/img/empty-cart.svg" alt="" class="img-fluid" width="300px" height="300px">
+            <h5 class="m-0 mt-2 text-muted">No Orders in Shipment</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
