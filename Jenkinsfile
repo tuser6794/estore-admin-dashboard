@@ -29,5 +29,25 @@ pipeline {
                 echo 'Test Stage Finished'
             }
         }
+
+        stage('Containerize') {
+            steps {
+
+                // Run docker command to build a container
+                sh "docker build -t estore-admin ."
+
+                echo 'Containerizing the App with Docker'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+
+                // Run the image in port 9090 and local port 8080 is blocked
+                sh "docker run -d -p 9090:80 estore-admin"
+
+                echo 'Deploy the App with Docker'
+            }
+        }
     }
 }
