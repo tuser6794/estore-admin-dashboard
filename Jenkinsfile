@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run ng test command
-                sh "ng test --browsers ChromeHeadless --watch=false"
+                sh "npm run ng test --browsers ChromeHeadless --watch=false"
                 echo 'Test Stage Finished'
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Run ng build command
-                sh "ng build"
+                sh "npm run ng build"
                 echo 'Test Stage Finished'
             }
         }
