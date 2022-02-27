@@ -20,7 +20,6 @@ pipeline {
             steps {
                 // Run ng test command
                 //sh "npm run ng test --browsers ChromeHeadless --watch=false"
-                sh "npm run ng test"
                 echo 'Test Stage Finished'
             }
         }
